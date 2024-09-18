@@ -42,6 +42,21 @@ h1 {
     background-color: #005f99;
 }
 
+#removeButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #ed2828;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+#removeButton:hover {
+    background-color: #990000;
+}
+
 /* Estilos para la lista de tareas */
 ul {
     list-style: none;
@@ -62,4 +77,12 @@ li {
 
 li:hover {
     background-color: #b3e0ff;
+}
+
+.completada {
+    background-color: #2ef85a;
+}
+
+.completada:hover{
+    background-color: #81f586;
 }
