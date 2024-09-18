@@ -38,12 +38,29 @@ function removeTask(taskText) {
 }
 
 // Manejamos el clic del botón de agregar tarea
-document.getElementById('addButton').addEventListener('click', () => {
+document.getElementById('addButton').addEventListener('click', (e) => {
     // Obtenemos el valor ingresado por el usuario
-
+    const inputValor = document.getElementById("taskInput").value; // toma el valor de el input y lo almacena en una constante
+    
     // Verificamos si el campo no está vacío
-        // Agregamos la tarea al DOM y la guardamos en el localStorage
-        // Limpiamos el campo de entrada después de agregar la tarea
+    if ( inputValor == '' || inputValor == ' '){ 
+        console.log('Esta vacio o tiene un espacio');
+        return;
+    }
+    // Agregamos la tarea al DOM y la guardamos en el localStorage
+        //Agregar tarea al DOM
+         const nuevoItemList = document.createElement('li');
+         nuevoItemList.addEventListener('click', function(e){ // Al hacer click en la tarea se elimina.
+            nuevoItemList.remove();
+         })
+         nuevoItemList.textContent = inputValor 
+         const lista = document.getElementById('taskList');
+         lista.appendChild(nuevoItemList);
+
+        //Guardar en LocalStorage
+
+    // Limpiamos el campo de entrada después de agregar la tarea
+    document.getElementById("taskInput").value = '' 
 });
 
 // Llamamos a esta función cuando la página se carga para inicializar la lista con tareas guardadas
